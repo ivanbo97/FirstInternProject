@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Students</title>
+
+<style>
+.heading {
+	font-size: 4rem;
+	color: green;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+
+</head>
+<body>
+	<!--/*@thymeleaf id="student" type="com.internship.intracol.model.Student"*/-->
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>City</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student: ${students}">
+					<td th:text="${student.id}" >id</td>
+					<td th:text="${student.firstName}">first name</td>
+					<td th:text="${student.lastName}">last name</td>
+					<td th:text="${student.city}">city</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+	
+	<div class = "container">
+	<a href="">Add new student</a>
+	</div>
+</body>
+</html>
